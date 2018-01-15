@@ -1,0 +1,35 @@
+void CommunicationNetwork::transmitMsg(string filename){
+	//read in message
+	ifstream message
+	message.open(filename)
+
+	//print error if you can't open file
+	//check to see if file is empty
+
+	city *temp = head
+	string data
+	while(message >> data)
+		temp = head
+		while(temp != nullptr)
+			temp->message = data
+
+			//print out the message each time
+			cout << temp->cityName << " recieved " << temp->message << endl
+			temp = temp->next
+}
+
+void CommunicationNetworK::addCity(string previousCity, string newCity){
+	City *temp = head
+	City *add = nullptr
+	bool found = false
+
+	while (temp->next != nullptr)
+		if(temp->cityName == pCity)
+			found = true
+			add = temp
+		else
+			temp = temp->next
+
+	temp->next = add->next
+	add->next = temp
+}

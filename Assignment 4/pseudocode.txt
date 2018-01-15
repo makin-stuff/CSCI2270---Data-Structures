@@ -1,0 +1,55 @@
+enqueue(string word)
+	
+	//not full
+	if(!queueIsFull)
+		
+		//add word to end of queue
+		arrayQueue[tail] = word
+
+		//check to see where tail is, reassign it
+		if(tail == queueSize - 1)
+
+			//move tail back to beginning
+			tail = 0;
+
+		else
+			//move tail to next spot
+			tail++
+
+		//print statements
+		cout << E: << word << endl
+		cout << H: << head << endl
+		cout << T: << tail << endl
+
+	else
+		cout << Queue is full. << endl
+
+
+dequeue
+
+	//define word to dequeue
+	string word = arrayQueue[head]
+
+	//not empty
+	if(!queueIsEmpty)
+
+		//delete word
+		arrayQueue[head] = ""
+
+		//check to see where head is, reassign it
+		if(head == queueSize - 1)
+
+			//move head back to beginning
+			head = 0
+
+		else
+			//move head to next spot
+			head++
+
+		//print statements
+		cout << H: << head << endl
+		cout << T: << tail << endl
+		cout << word: << word << endl
+
+	else
+		cout << Queue is empty. << endl

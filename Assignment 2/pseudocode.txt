@@ -1,0 +1,17 @@
+//Double array pseudocode
+
+if(wordCount == sizeOfOriginalArray)
+	
+	//create new array with type Word
+	Word *newArr = new Word[2*sizeOfOriginalArray]
+
+	//put the items of the original array into the new one
+	for(i = 0 to sizeOfOriginalArray)
+		newArr[i] = originalArr[i];
+
+	//delete old ("original") array 
+	delete []originalArr
+
+	//finally, set this new array and size to originalArray so that the next time this iterates through, it doubles the already doubled array
+	sizeOfOriginalArray *= 2
+	originalArr = newArr;

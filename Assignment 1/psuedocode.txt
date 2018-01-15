@@ -1,0 +1,19 @@
+item list[100];
+
+while (you can get a new line of filename.txt)
+
+	vector notMatched
+
+	for(i=0 to fileCounter.end)
+		for(j=0 to notMatched.end)
+			if(list[i] is for sale && notMatched[j] is wanted && the item types match up && the prices agree)
+				print list[i].item + " " + list[i].price
+
+				shift array
+			if(list[i] is wanted && notMatched[j] is for sale && the item types match up && the prices agree)
+				print list[i].item + " " + list[i].price
+
+				shift array
+		if(no match found)
+			notMatched(list[i])		//adding to end of list?
+

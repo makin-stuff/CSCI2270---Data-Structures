@@ -1,0 +1,106 @@
+rbAddFixup(movie *node)
+	while((node != root) and (node->parent->color == red))
+
+		//parent is a left child
+		if(node->parent == node->parent->parent->left)
+			uncle = ndde->parent->parent->right
+
+			//case 1
+			if(uncle->color == red)
+				RBCase1Left(node, uncle)
+				node = node->parent->parent
+			else
+
+				//case 2
+				if(node == node->parent->right)
+					node = node->parent
+					leftRotate(node)
+
+				//case 3
+				RBCase3Left(node)
+
+		//parent is a right child
+		else
+			uncle = node->parent->parent->left
+
+			//case 1
+			if(uncle->color == red)
+				RBCase1Right(node, uncle)
+				node = node->parent->parent
+			else
+
+				//case 2
+				if(node = node->parent->left)
+					node = node->parent
+					rightRotate(node)
+
+				//case 3
+				RBCase3Right(node)
+	root->color = black
+
+
+rbDeleteFixup(movie *node)
+	while(node != root and node->color == black)
+
+		//node is a left child
+		if(node == node->parent->left)
+			s = node->parent->right
+
+			//case 1
+			if(s->color == red)
+				s->color = black
+				node->parent->color = red
+				leftRotate(node->parent)
+				s = node->parent->right
+
+			//case 2
+			if(s->left->color == black and s->right->color == black)
+				s->color = red
+				node = node->parent
+
+			//case 3
+			else if(s->left->colo == red and s->right->color == black)
+				s->left->color = black
+				s->color = red
+				rightRotate(s)
+				s = node->parent->right
+
+			//case 4
+			else
+				s->color = node->parent->color
+				node->parent->color = black
+				s->right->color = black
+				leftRotate(node->parent)
+				node = root
+
+		//node is a right child
+		else
+			s = node->parent->left
+
+			//case 1
+			if(s->color == red)
+				s->color = black
+				node->parent->color = red
+				rightRotate(node->parent)
+				s = node->parent->left
+
+			//case 2
+			if(s->left->color == black and s->right->color == black)
+				s->color = red
+				node = node->parent
+
+			//case 3
+			else if(s->left->color == red and s->right->color == black)
+				s->right->color = black
+				s->color = red
+				leftRotate(s)
+				s = node->parent->left
+
+			//case 4
+			else
+				s->color = node->parent->color
+				node->parent->color = black
+				s->left->color = black
+				rightRotate(node->parent)
+				node = root
+	node->color = black

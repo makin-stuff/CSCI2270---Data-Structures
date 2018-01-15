@@ -1,0 +1,54 @@
+void deleteNode(string title)
+	
+	del = search(title)
+
+	if(del == nullptr)
+		cout "Movie not found"
+	else
+
+		//if del has no children
+		if(del->left == nullptr && del->right == nullptr)
+
+			//reassign parent pointers to nullptr
+			if(del->parent->left == del)
+				del->parent->left = nullptr
+			else
+				del->parent->right = nullptr
+			delete del
+
+
+		//if del has one child - 2 cases
+		else if(del->right == nullptr)
+			if(del->parent->left = del)
+
+				//reassign parent and child pointers
+				del->parent->left = del->left
+				del->left->parent = del->parent
+			else
+				del->parent->right = del->left
+				del->left->parent = del->parent
+			delete del
+
+		else if(del->left == nullptr)
+			if(del->parent->left = del)
+				del->parent->left = del->right
+				del->right->parent = del->parent
+			else
+				del->parent->right = del->right
+				del->right->parent = del->parent
+			delete del
+
+
+		//if del has two children
+		else
+
+			//find the minimum of the right branch
+			min = treeMinimum(deleteNode)
+
+			if(min->right != nullptr)
+				min->right->parent = min->parent
+				min->parent->left = min->right
+			else
+				min->parent->left = nullptr
+			delete min
+
